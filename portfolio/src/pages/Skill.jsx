@@ -5,27 +5,27 @@ import {
   FaCss3Alt,
   FaGitAlt,
   FaDocker,
+  FaDatabase,
 } from "react-icons/fa";
+
 import {
   SiJavascript,
   SiTailwindcss,
   SiBootstrap,
   SiMongodb,
   SiMysql,
+  SiHibernate,
 } from "react-icons/si";
 
 const skills = [
-  { name: "Java", level: 75, icon: FaJava, color: "bg-orange-500" },
-  { name: "JavaScript", level: 80, icon: SiJavascript, color: "bg-yellow-400" },
-  { name: "React", level: 78, icon: FaReact, color: "bg-cyan-400" },
+  { name: "Java", level: 90, icon: FaJava, color: "bg-orange-500" },
+  { name: "JavaScript", level: 60, icon: SiJavascript, color: "bg-yellow-400" },
+  { name: "React", level: 70, icon: FaReact, color: "bg-cyan-400" },
   { name: "HTML", level: 90, icon: FaHtml5, color: "bg-orange-600" },
   { name: "CSS", level: 85, icon: FaCss3Alt, color: "bg-blue-500" },
-  { name: "Bootstrap", level: 70, icon: SiBootstrap, color: "bg-purple-500" },
-  { name: "Tailwind CSS", level: 85, icon: SiTailwindcss, color: "bg-teal-400" },
-  { name: "MongoDB", level: 65, icon: SiMongodb, color: "bg-green-500" },
-  { name: "SQL", level: 70, icon: SiMysql, color: "bg-sky-500" },
+  { name: "MongoDB", level: 75, icon: SiMongodb, color: "bg-green-500" },
+  { name: "SQL", level: 85, icon: SiMysql, color: "bg-sky-500" },
   { name: "Git", level: 80, icon: FaGitAlt, color: "bg-red-500" },
-  { name: "Docker", level: 55, icon: FaDocker, color: "bg-blue-400" },
 ];
 
 const Skill = () => {

@@ -49,6 +49,7 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your name"
+              required
               className="
                 w-full mt-2 px-4 py-3 rounded-lg
                 bg-black/40 border border-white/10
@@ -61,6 +62,7 @@ const Contact = () => {
             <label className="text-sm text-slate-400">Email</label>
             <input
               type="email"
+              required
               placeholder="your@email.com"
               className="
                 w-full mt-2 px-4 py-3 rounded-lg
@@ -74,6 +76,7 @@ const Contact = () => {
             <label className="text-sm text-slate-400">Message</label>
             <textarea
               rows="4"
+              required
               placeholder="Your message..."
               className="
                 w-full mt-2 px-4 py-3 rounded-lg
@@ -92,6 +95,7 @@ const Contact = () => {
               text-black font-semibold
               transition
             "
+
           >
             Send Message
           </button>
