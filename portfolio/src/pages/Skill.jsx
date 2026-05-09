@@ -15,16 +15,21 @@ import {
   SiMongodb,
   SiMysql,
   SiHibernate,
+  SiExpress,
 } from "react-icons/si";
 
 const skills = [
   { name: "Java", level: 90, icon: FaJava, color: "bg-orange-500" },
-  { name: "JavaScript", level: 60, icon: SiJavascript, color: "bg-yellow-400" },
-  { name: "React", level: 70, icon: FaReact, color: "bg-cyan-400" },
+  { name: "JavaScript", level: 80, icon: SiJavascript, color: "bg-yellow-400" },
+   { name: "MongoDB", level: 75, icon: SiMongodb, color: "bg-green-500" },
+  { name: "SQL", level: 85, icon: SiMysql, color: "bg-sky-500" },
+  { name: "Node.js", level: 85, icon: SiMysql, color: "bg-sky-500" },
+  { name: "Express.js", level: 85, icon: SiExpress, color: "bg-yellow-500" },
+  { name: "JDBC", level: 80, icon: FaDatabase, color: "bg-sky-500" },
+  { name: "React", level: 75, icon: FaReact, color: "bg-cyan-400" },
   { name: "HTML", level: 90, icon: FaHtml5, color: "bg-orange-600" },
   { name: "CSS", level: 85, icon: FaCss3Alt, color: "bg-blue-500" },
-  { name: "MongoDB", level: 75, icon: SiMongodb, color: "bg-green-500" },
-  { name: "SQL", level: 85, icon: SiMysql, color: "bg-sky-500" },
+
   { name: "Git", level: 80, icon: FaGitAlt, color: "bg-red-500" },
 ];
 

@@ -1,21 +1,61 @@
-const Contact = () => {
-  return (
-    <div className="min-h-screen px-6 md:px-20 py-16 text-white">
+import { useState } from "react";
 
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:9000/message", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        alert("successfully sent!");
+        console.log(formData); // used to reset form after submission
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert("reduce size of name");
+      }
+    } catch (err) {
+      alert("message Not sent!");
+    }
+  };
+
+  return (
+    <div className="min-h-screen px-3 md:px-20 py-8 text-white">
       {/* Heading */}
       <div className="text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold">
           Contact <span className="text-orange-400">Me</span>
         </h1>
-       
       </div>
 
       {/* Main Section */}
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-
+      <div className="grid md:grid-cols-2 gap-10 ">
         {/* Left Info */}
-        <div className="space-y-6">
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/10">
+        <div className="space-y-2 mt-15">
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-white/10">
             <h3 className="text-xl font-semibold mb-2">Let’s Connect</h3>
             <p className="text-slate-400 mb-4">
               I’m open to internships, projects, and Full time Job.
@@ -37,6 +77,7 @@ const Contact = () => {
 
         {/* Right Form */}
         <form
+          onSubmit={handleSubmit}
           className="
             p-8 rounded-2xl
             bg-gradient-to-br from-slate-900 to-slate-800
@@ -47,7 +88,10 @@ const Contact = () => {
           <div>
             <label className="text-sm text-slate-400">Name</label>
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.name}
+              name="name"
               placeholder="Your name"
               required
               className="
@@ -61,7 +105,10 @@ const Contact = () => {
           <div>
             <label className="text-sm text-slate-400">Email</label>
             <input
+              onChange={handleChange}
               type="email"
+              name="email"
+              value={formData.email}
               required
               placeholder="your@email.com"
               className="
@@ -75,8 +122,11 @@ const Contact = () => {
           <div>
             <label className="text-sm text-slate-400">Message</label>
             <textarea
+              onChange={handleChange}
+              value={formData.message}
               rows="4"
               required
+              name="message"
               placeholder="Your message..."
               className="
                 w-full mt-2 px-4 py-3 rounded-lg
@@ -86,21 +136,36 @@ const Contact = () => {
               "
             ></textarea>
           </div>
-
-          <button
-            type="submit"
-            className="
-              w-full py-3 rounded-lg
-              bg-orange-500 hover:bg-orange-600
+          <div className="flex justify-center">
+            <button
+              onClick={() =>
+                setFormData({
+                  
+                  message: "",
+                })
+              }
+              className="
+              w-full md:w-48 h-12 rounded-lg 
+              bg-[var(--color-accent)] hover:[var(--color-accent)]
               text-black font-semibold
               transition
             "
-
-          >
-            Send Message
-          </button>
+            >
+              Reset Message
+            </button>
+            <button
+              type="submit"
+              className="
+               w-full md:w-48 py-3 rounded-lg ml-10
+              bg-[var(--color-accent)] hover:[var(--color-accent)]
+              text-black font-semibold
+              transition
+            "
+            >
+              Send Message
+            </button>
+          </div>
         </form>
-
       </div>
     </div>
   );

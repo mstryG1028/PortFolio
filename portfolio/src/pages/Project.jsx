@@ -5,8 +5,8 @@ const projects = [
     title: "Wanderlust Holidays",
     description:
       "A travel and holiday booking website with modern UI, responsive design, and smooth user experience.",
-    image: "/images/Screenshot 2026-02-15 161423.png",
-    tech: ["Node", "Bootstrap", "MongoDB"],
+    image: "/images/Screenshot 2026-05-09 090051.png",
+    tech: ["Node","Express","Database Management", "Bootstrap", "MongoDB"],
     code: "https://github.com/mstryG1028/WanderLust-Holidays",
     demo: "https://wanderlust-holidays-7umj.onrender.com",
   },
@@ -14,8 +14,8 @@ const projects = [
     title: "Digital Dashboard",
     description:
       "An analytics dashboard displaying charts, statistics, and insights using a clean and modern layout.",
-    image: "/images/Screenshot 2026-02-01 182330.png",
-    tech: ["node","Express", "Charts", "Web Technology"],
+    image: "/images/Screenshot 2026-05-09 090212.png",
+    tech: ["node","Express", "Charts","Excel", "Web Technology"],
     code: "https://github.com/mstryG1028/Digital_DashBoard",
     demo: "https://digital-dashboard.onrender.com",
   },
@@ -23,8 +23,8 @@ const projects = [
     title: "Sorting Visualizer",
     description:
       "A visual tool to understand sorting algorithms through animations and real-time comparisons.",
-    image: "/images/Screenshot 2026-02-15 161545.png",
-    tech: ["JavaScript", "Algorithms", "HTML"],
+    image: "/images/Screenshot 2026-05-09 090410.png",
+    tech: ["JavaScript", "Sorting Algorithms", "Web Technology"],
     code: "https://github.com/mstryG1028/sorting",
     demo: "https://sortingpro1.netlify.app/",
   },

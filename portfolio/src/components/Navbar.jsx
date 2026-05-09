@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,7 +9,7 @@ const Navbar = () => {
   return (
     <nav
       className="
-        w-full h-15 
+      w-full px-8 py-2 flex items-center justify-between
 
         text-[var(--color-textPrimary)]
         flex items-center justify-between
@@ -18,12 +19,14 @@ const Navbar = () => {
     >
       {/* Name */}
       <div className="nameBox text-4xl mb-2 text-[var(--color-accent)]">
-        <h1>Deepak Mistry</h1>
+        <Link to="/">
+          <h1>Deepak Mistry</h1>
+        </Link>
       </div>
 
       {/* Links */}
       <div
-  className="
+        className="
     linksBox hidden md:flex 
     items-center gap-10 px-10 h-10 mt-5
     justify-center rounded-full
@@ -37,10 +40,10 @@ bg-blend-color-burn
     hover:shadow-[0_0_10px_rgba(16,185,129,0.35)]
     transition-all duration-300
   "
->
-    <a
-    href="/"
-    className="
+      >
+        <a
+          href="/"
+          className="
       relative font-medium cursor-pointer transition
       text-[var(--color-textPrimary)]
       hover:text-[var(--color-accentSoft)]
@@ -52,14 +55,13 @@ bg-blend-color-burn
       after:transition-all after:duration-300
       hover:after:w-full
     "
-  >
-    Home
-  </a>
-  
+        >
+          Home
+        </a>
 
-  <a
-    href="/skill"
-    className="
+        <a
+          href="/skill"
+          className="
       relative font-medium cursor-pointer transition
       text-[var(--color-textPrimary)]
       hover:text-[var(--color-accentSoft)]
@@ -71,13 +73,13 @@ bg-blend-color-burn
       after:transition-all after:duration-300
       hover:after:w-full
     "
-  >
-    Skills
-  </a>
+        >
+          Skills
+        </a>
 
-  <a
-    href="/project"
-    className="
+        <a
+          href="/project"
+          className="
       relative font-medium cursor-pointer transition
       text-[var(--color-textPrimary)]
       hover:text-[var(--color-accentSoft)]
@@ -89,13 +91,13 @@ bg-blend-color-burn
       after:transition-all after:duration-300
       hover:after:w-full
     "
-  >
-    Projects
-  </a>
+        >
+          Projects
+        </a>
 
-  <a
-    href="/contact"
-    className="
+        <a
+          href="/contact"
+          className="
       relative font-medium cursor-pointer transition
       text-[var(--color-textPrimary)]
       hover:text-[var(--color-accentSoft)]
@@ -107,28 +109,47 @@ bg-blend-color-burn
       after:transition-all after:duration-300
       hover:after:w-full
     "
-  >
-    Contact
-  </a>
-</div>
-
+        >
+          Contact
+        </a>
+      </div>
 
       {/* Resume Button */}
 
-<a
-  href="/DeepakMistryResume.pdf" // used to download resume which should in public folder
-  download="resume" // name of downloaded file
-  className="
+      <a
+        href="/DeepakMistryF.pdf" // used to download resume which should in public folder
+        download="resume" // name of downloaded file
+        className="
+         w-full md:w-48
     hidden md:block
     bg-[var(--color-accent)]
     text-[var(--color-themeColor)]
     px-6 py-2 rounded-full font-semibold
     hover:opacity-90 transition
   "
->
-  Download Resume
-</a>
+      >
+        Download Resume
+      </a>
 
+      {/* Messages Icon */}
+
+      {/* <Link to="/message">
+        <div
+          className="
+      w-10 h-10
+      rounded-full
+      bg-cyan-400
+      hover:bg-cyan-300
+      flex items-center justify-center
+      text-black
+      text-xl
+      transition
+      cursor-pointer
+    "
+        >
+          <FaEnvelope />
+        </div>
+      </Link> */}
 
       {/* Mobile Icon */}
       <div
@@ -150,7 +171,7 @@ bg-blend-color-burn
             md:hidden
           "
         >
-          {[ "Skills", "Projects", "Contact"].map(link => (
+          {["Skills", "Projects", "Contact"].map((link) => (
             <a
               key={link}
               className="hover:text-[var(--color-accentSoft)] cursor-pointer"
