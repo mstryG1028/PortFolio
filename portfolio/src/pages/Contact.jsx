@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +40,7 @@ const Contact = () => {
         alert("reduce size of name");
       }
     } catch (err) {
-      alert("message Not sent!");
+      alert("message not sent!");
     }
   };
 
@@ -65,6 +67,18 @@ const Contact = () => {
               <p>
                 📧 <span className="ml-2">mistrydeepak1028@gmail.com</span>
               </p>
+              <p className="flex items-center mt-2">
+                <FaLinkedin className="text-white-600" />
+                <a
+                  href="https://www.linkedin.com/in/deepakmistry-8a3219261"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-5 text-white-600 "
+                >
+                  linkedin.com/Deepak-Mistry
+                </a>
+              </p>
+
               <p>
                 📍 <span className="ml-2">India</span>
               </p>
@@ -140,7 +154,6 @@ const Contact = () => {
             <button
               onClick={() =>
                 setFormData({
-                  
                   message: "",
                 })
               }

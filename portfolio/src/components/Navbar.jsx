@@ -117,7 +117,7 @@ bg-blend-color-burn
       {/* Resume Button */}
 
       <a
-        href="/DeepakMistryF.pdf" // used to download resume which should in public folder
+        href="/Deepak_Mistry_Resume.pdf" // used to download resume which should in public folder
         download="resume" // name of downloaded file
         className="
          w-full md:w-48

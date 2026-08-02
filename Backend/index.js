@@ -6,9 +6,15 @@ const port=9000;
 
 const cors = require("cors");
 const sql=require("mysql2");
-
+const path=require("path");
 app.use(cors());
 app.use(express.json());
+
+
+
+
+
+
 
 const conn=sql.createConnection({
     host: process.env.DB_HOST,
@@ -27,10 +33,12 @@ conn.connect((err)=>{
 })
 
 
+app.use(express.static(path.join(__dirname, "portfolio/dist")));
 
-app.get("/",(req,res)=>{
-    res.send("heloo from backend")
-})
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, "portfolio", "dist", "index.html"));
+});
+
 
 app.get("/message", (req, res) => {
 

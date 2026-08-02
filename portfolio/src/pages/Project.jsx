@@ -2,20 +2,29 @@ import React from "react";
 
 const projects = [
   {
-    title: "Wanderlust Holidays",
+    title: "travEase - AI Based Trip Recommendation",
     description:
       "A travel and holiday booking website with modern UI, responsive design, and smooth user experience.",
-    image: "/images/Screenshot 2026-05-09 090051.png",
-    tech: ["Node","Express","Database Management", "Bootstrap", "MongoDB"],
-    code: "https://github.com/mstryG1028/WanderLust-Holidays",
-    demo: "https://wanderlust-holidays-7umj.onrender.com",
+    image: "images/travEase.png",
+    tech: [
+      "Node",
+      "Express",
+      "React",
+      "MongoDB",
+      "Gemini-Integration",
+      "Weather-API",
+      "Database Management",
+      "Tailwind",
+    ],
+    code: "https://github.com/mstryG1028/travEase",
+    demo: "https://travease-1.onrender.com",
   },
   {
     title: "Digital Dashboard",
     description:
       "An analytics dashboard displaying charts, statistics, and insights using a clean and modern layout.",
     image: "/images/Screenshot 2026-05-09 090212.png",
-    tech: ["node","Express", "Charts","Excel", "Web Technology"],
+    tech: ["node", "Express", "Charts", "Excel", "Web Technology"],
     code: "https://github.com/mstryG1028/Digital_DashBoard",
     demo: "https://digital-dashboard.onrender.com",
   },
@@ -28,12 +37,20 @@ const projects = [
     code: "https://github.com/mstryG1028/sorting",
     demo: "https://sortingpro1.netlify.app/",
   },
+  {
+    title: "TraxPense- Track Daily Expenses",
+    description:
+      "Allows users to add, edit, and delete income and expense transactions. The application automatically calculates total income, total expenses, and current balance",
+    image: "/images/traxPense.png",
+    tech: ["node", "Express", "React"],
+    code: "https://github.com/mstryG1028/traxPense",
+    demo: "https://traxpense-1.onrender.com/",
+  },
 ];
 
 const Project = () => {
   return (
     <div className="min-h-screen px-6 md:px-20 py-16 text-white">
-      
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-14">
         My <span className="text-orange-400">Projects</span>
@@ -64,9 +81,7 @@ const Project = () => {
 
             {/* Content */}
             <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">
-                {project.title}
-              </h3>
+              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
 
               <p className="text-slate-400 text-sm mb-4">
                 {project.description}
@@ -120,7 +135,6 @@ const Project = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
